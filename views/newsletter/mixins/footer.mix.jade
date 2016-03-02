@@ -1,0 +1,17 @@
+mixin footer
+  mixin separator
+  table.main_table(width="100%" border="0" cellpadding="0" cellspacing="0" align="center")
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td.double_padding_top(align="center")
+              each item in footer
+                a.footer-link(href="{item.url}")= item.title
+          tr
+            td.single_padding_top(align="center")
+              p.footer-address!= footer_address
+              p.footer-disclaimer!= footer_disclaimer
+          tr
+            td.double_padding(align="center")
+              img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3b08b84e.png")

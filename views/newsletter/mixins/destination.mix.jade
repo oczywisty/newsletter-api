@@ -1,0 +1,21 @@
+mixin destination
+  table.main_table(width="100%" border="0" cellpadding="0" cellspacing="0" align="center")
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td.double_padding_top
+              img.full_width(src="/#{name}/images/#{destination.image}")
+          tr
+            td.single_padding(valign="top")
+              table(border="0" cellpadding="0" cellspacing="0")
+                tr
+                  td
+                    span.article_title= destination.title
+                tr
+                  td
+                    p.article_text.article_text--padded= destination.content
+          tr
+            td.double_padding_bottom
+              mixin button(destination.link, "#")
+        mixin separator

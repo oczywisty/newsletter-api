@@ -1,0 +1,76 @@
+mixin header
+  table.main_table(width="100%" border="0" cellpadding="0" cellspacing="0" align="center")
+    tr
+      td.single_padding_top
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td
+              table(width="200" align="left" border="0" cellpadding="0" cellspacing="0")
+                tr
+                  td &nbsp;
+              table.full_width(width="200" align="left" border="0" cellpadding="0" cellspacing="0")
+                tr
+                  td.padding_mobile(align="center")
+                    a(href="http://lonelyplanet.com")
+                      img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3b0c8e5f.png" width="107")
+              table.full_width(width="200" height="54" align="right" border="0" cellpadding="0" cellspacing="0")
+                tr
+                  td(valign="middle" align="center")
+                    a.social_top(href="#{mail_url}")
+                      img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3b1c7964.png" width="33")
+                    a.social_top(href="#{twitter_url}")
+                      img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3af2039e.png" width="33")
+                    a.social_top(href="#{facebook_url}")
+                      img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3b142e63.png" width="33")
+                    a.social_top(href="#{insta_url}")
+                      img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3b10ab3e.png" width="33")
+    tr
+      td.double_padding_top(align="center")
+        span.newsletter_subtitle= header_story.subtitle
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td.single_padding(align="center")
+              span.newsletter_title= header_story.title
+    tr
+      td(align="center")
+        img.full_width(src="/#{name}/images/#{header_story.image}")
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td.single_padding
+              table.half_width(align="left" width="290" height="130")
+                tr
+                  td(align="center" height="85")
+                    img(src="/#{name}/images/#{header_story.hero.image}")
+                tr
+                  td(align="center")
+                    span.hero_name= header_story.hero.name
+                tr
+                  td(align="center")
+                    span.hero_subtitle= header_story.hero.subtitle
+              table(width="1" bgcolor="#e4e3e3" border="0" cellpadding="0" cellspacing="0"  align="left")
+                tr
+                  td(width="1" height="130")
+                    
+              table.half_width(align="left" width="290" height="130")
+                tr
+                  td(align="center" height="85")
+                    img(src="/#{name}/images/#{header_story.sponsor.image}")
+                tr
+                  td(align="center")
+                    span.hero_name= header_story.sponsor.name
+                tr
+                  td(align="center")
+                    span.hero_subtitle= header_story.sponsor.subtitle
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td(align="center")
+              p.article_text= header_story.content
+    tr
+      td.double_padding
+        mixin button(header_story.cta, header_story.url)

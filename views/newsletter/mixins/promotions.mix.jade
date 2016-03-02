@@ -1,0 +1,17 @@
+mixin promotions
+  table.main_table(width="100%" border="0" cellpadding="0" cellspacing="0" align="center")
+    tr
+      td
+        mixin sectionTitle("New Promotions")
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td.double_padding_bottom
+              img.full_width(src="/#{name}/images/#{promotions.image}")
+    tr
+      td
+        table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
+          tr
+            td.double_padding(align="center")
+              img.full_width_max(src="/#{name}/images/#{promotions.banner}")
