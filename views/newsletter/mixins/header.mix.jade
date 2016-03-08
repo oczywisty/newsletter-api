@@ -1,4 +1,4 @@
-mixin header
+mixin header(content)
   table.main_table(width="100%" border="0" cellpadding="0" cellspacing="0" align="center")
     tr
       td.single_padding_top
@@ -26,51 +26,34 @@ mixin header
                       img(src="http://media.sailthru.com/37s/1k0/3/2/56d6d3b10ab3e.png" width="33")
     tr
       td.double_padding_top(align="center")
-        span.newsletter_subtitle= header_story.subtitle
+        span.newsletter_subtitle= content.subtitle
     tr
       td
         table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
           tr
             td.single_padding(align="center")
-              span.newsletter_title= header_story.title
+              span.newsletter_title= content.title
     tr
       td(align="center")
-        img.full_width(src="/#{name}/images/#{header_story.image}")
+        img.full_width(src="#{content.image}")
     tr
       td
         table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
           tr
             td.single_padding
-              table.half_width(align="left" width="290" height="130")
-                tr
-                  td(align="center" height="85")
-                    img(src="/#{name}/images/#{header_story.hero.image}")
-                tr
-                  td(align="center")
-                    span.hero_name= header_story.hero.name
-                tr
-                  td(align="center")
-                    span.hero_subtitle= header_story.hero.subtitle
-              table(width="1" bgcolor="#e4e3e3" border="0" cellpadding="0" cellspacing="0"  align="left")
-                tr
-                  td(width="1" height="130")
-                    
-              table.half_width(align="left" width="290" height="130")
-                tr
-                  td(align="center" height="85")
-                    img(src="/#{name}/images/#{header_story.sponsor.image}")
-                tr
-                  td(align="center")
-                    span.hero_name= header_story.sponsor.name
-                tr
-                  td(align="center")
-                    span.hero_subtitle= header_story.sponsor.subtitle
+              - single = content.hero.enabled && content.sponsor.enabled
+              mixin person(content.hero, single)
+              if single
+                table(width="1" bgcolor="#e4e3e3" border="0" cellpadding="0" cellspacing="0"  align="left")
+                  tr
+                    td(width="1" height="130")
+              mixin person(content.sponsor, single)
     tr
       td
         table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
           tr
             td(align="center")
-              p.article_text= header_story.content
+              p.article_text= content.content
     tr
       td.double_padding
-        mixin button(header_story.cta, header_story.url)
+        mixin button(content.cta, content.url)

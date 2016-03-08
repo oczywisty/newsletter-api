@@ -5,11 +5,16 @@ html(lang='en')
   include ./components/head.jade
   body
     table#bodyTable
-      mixin header
-      mixin articles
-      mixin destination
-      mixin featured_titles
-      mixin promotions
+      each block in blocks
+        case block.type
+          when 'header'
+            mixin header(block)
+          when 'articles'
+            mixin articles(block)
+          when 'destination'
+            mixin destination(block)
+          when 'promotions'
+            mixin promotions(block)
       mixin social_bottom
       mixin apps
       mixin footer
