@@ -4,7 +4,9 @@ var state = {
   db: null,
 }
 
-var port = normalizePort(process.env.REDIS || "6379");
+var port = process.env.REDIS || "6379";
+
+console.log(port);
 
 var MODE_TEST = "mode_test"
   , MODE_PRODUCTION = "mode_production"
