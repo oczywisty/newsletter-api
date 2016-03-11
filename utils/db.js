@@ -4,6 +4,8 @@ var state = {
   db: null,
 }
 
+var port = normalizePort(process.env.REDIS || "6379");
+
 var MODE_TEST = "mode_test"
   , MODE_PRODUCTION = "mode_production"
 
@@ -11,7 +13,8 @@ exports.MODE_TEST = MODE_TEST
 exports.MODE_PRODUCTION = MODE_PRODUCTION
 
 exports.connect = function(mode) {
-  state.db = new Redis()
+
+  state.db = new Redis(port)
 
   // Use different DB when testing
   if (mode === MODE_TEST) {
