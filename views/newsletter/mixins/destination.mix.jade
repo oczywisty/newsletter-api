@@ -5,17 +5,19 @@ mixin destination(content)
         table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
           tr
             td.double_padding_top
-              img.full_width(src="#{content.image}")
+              a(href="#{content.cta.url}")
+                img.full_width(src="#{content.image}")
           tr
             td.single_padding(valign="top")
-              table(border="0" cellpadding="0" cellspacing="0")
-                tr
-                  td
-                    span.article_title= content.title
-                tr
-                  td
-                    p.article_text.article_text--padded= content.content
+              a(href="#{content.cta.url}")
+                table(border="0" cellpadding="0" cellspacing="0")
+                  tr
+                    td
+                      span.article_title= content.title
+                  tr
+                    td
+                      p.article_text.article_text--padded= content.content
           tr
             td.double_padding_bottom
-              mixin button(content.link, "#")
+              mixin button(content.cta)
         mixin separator

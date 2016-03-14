@@ -1,8 +1,8 @@
-mixin button(label, url)
+mixin button(content)
   table.full_width(width="600" border="0" cellpadding="0" cellspacing="" align="center")
     tr
       td &nbsp;
       td.button(align="center")
-        a(href="#{url}")
-          span= label
+        a(href="#{content.url}")
+          span= content.label
       td &nbsp;

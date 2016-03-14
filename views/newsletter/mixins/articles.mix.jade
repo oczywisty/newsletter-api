@@ -13,7 +13,8 @@ mixin articles(content)
             - if(article.big)
               tr
                 td.double_padding_top
-                  img.full_width(src="#{article.image}")
+                  a(href="#{article.url}")
+                    img.full_width(src="#{article.image}")
               tr
                 td.single_padding_top.double_padding_bottom(valign="top")
                   mixin article_content(article)
@@ -22,5 +23,6 @@ mixin articles(content)
                 td.double_padding(valign="top")
                   mixin article_content(article)
                 td.double_padding.third_width(width="220" align="right" valign="top")
-                  img.full_width(src="#{article.image}")
+                  a(href="#{article.url}")
+                    img.full_width(src="#{article.image}")
           mixin separator

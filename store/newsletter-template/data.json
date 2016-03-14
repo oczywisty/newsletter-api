@@ -9,17 +9,21 @@
             "subtitle": "WEEKLY DIGEST",
             "content": "Heart set on a high altitude escape? Reaching those cloud-skimming summits takes more than passion and drive. With a little preparation, you won’t just make it to the peak – you’ll move mountains. high altitude oiud ad escape? Reaching those cloud-skimming summits takes more than passion and drive. With a little preparation, you won’t just make it to the peak.",
             "image": "http://placehold.it/600x512",
-            "cta": "READ MORE",
-            "url": "###",
+            "cta": {
+                "label": "READ MORE",
+                "url": "http://lonenlyplanet.com"
+            },
             "sponsor": {
                 "name": "UBER",
                 "image": "http://placehold.it/60x60",
-                "subtitle": "Newsletter Sponsor"
+                "subtitle": "Newsletter Sponsor",
+                "enabled": true
             },
             "hero": {
                 "name": "CHINA WILLIAMS",
                 "image": "http://placehold.it/60x60",
-                "subtitle": "Chief Asia Editor"
+                "subtitle": "Chief Asia Editor",
+                "enabled": true
             }
         },
         {
@@ -27,54 +31,16 @@
             "title": "Top Articles",
             "articles": [
                 {
-                    "title": "India's monsoon rains seen falling short",
-                    "content": "Tokyo celebrates the arrival of spring with a cavalcade of festivals old and new which<span> transform temples, shrines and city streets into buzzing centres of activity</span>...",
-                    "image": "http://placehold.it/190x230",
-                    "person":{
-                        "name": "TIM PLAUM",
-                        "title": "Lonely Planet Editor",
-                        "image": "http://placehold.it/40x40"
-                    }
-                },
-                {
-                    "title": "India's monsoon rains seen falling short",
-                    "content": "Tokyo celebrates the arrival of spring with a cavalcade of festivals old and new which<span> transform temples, shrines and city streets into buzzing centres of activity</span>...",
-                    "image": "http://placehold.it/190x230",
-                    "person":{
-                        "name": "TIM PLAUM",
-                        "title": "Lonely Planet Editor",
-                        "image": "http://placehold.it/40x40"
-                    }
-                },
-                {
                     "big": true,
                     "title": "India's monsoon rains seen falling short",
                     "content": "Tokyo celebrates the arrival of spring with a cavalcade of festivals old and new which transform temples, shrines and city streets into buzzing centres of activity...",
                     "image": "http://placehold.it/600x512",
+                    "url": "http://lonelyplanet.com",
                     "person":{
                         "name": "TIM PLAUM",
-                        "title": "Lonely Planet Editor",
-                        "image": "http://placehold.it/40x40"
-                    }
-                },
-                {
-                    "title": "India's monsoon rains seen falling short",
-                    "content": "Tokyo celebrates the arrival of spring with a cavalcade of festivals old and new which<span> transform temples, shrines and city streets into buzzing centres of activity</span>...",
-                    "image": "http://placehold.it/190x230",
-                    "person":{
-                        "name": "TIM PLAUM",
-                        "title": "Lonely Planet Editor",
-                        "image": "http://placehold.it/40x40"
-                    }
-                },
-                {
-                    "title": "India's monsoon rains seen falling short",
-                    "content": "Tokyo celebrates the arrival of spring with a cavalcade of festivals old and new which<span> transform temples, shrines and city streets into buzzing centres of activity</span>...",
-                    "image": "http://placehold.it/190x230",
-                    "person":{
-                        "name": "TIM PLAUM",
-                        "title": "Lonely Planet Editor",
-                        "image": "http://placehold.it/40x40"
+                        "subtitle": "Lonely Planet Editor",
+                        "image": "http://placehold.it/40x40",
+                        "enabled": true
                     }
                 }
             ]
@@ -84,30 +50,46 @@
             "title": "Destination Spotlight: Venice",
             "content": "Tokyo celebrates the arrival of spring with a cavalcade of festivals old and new which transform temples, shrines and city streets into buzzing centres of activity...",
             "image": "http://placehold.it/600x512",
-            "link": "LEARN MORE ABOUT VENICE"
+            "cta": { 
+                "label": "LEARN MORE ABOUT VENICE",
+                "url": "http://lonenlyplanet.com"
+            }
         },
         {
             "type": "featured_titles",
+            "title": "Featured titles",
+            "cta": {
+                "label": "SEE MORE TITLES",
+                "url": "http://lonenlyplanet.com"
+            },
             "items": [
                 {
                     "title": "Borneo",
-                    "type": "GUIDEBOOK",
-                    "image": "http://placehold.it/200x307"
+                    "subtitle": "GUIDEBOOK",
+                    "image": "http://placehold.it/200x307",
+                    "url": "http://lonelyplanet.com",
+                    "enabled": true
                 },
                 {
                     "title": "England",
-                    "type": "GUIDEBOOK",
-                    "image": "http://placehold.it/200x307"
+                    "subtitle": "GUIDEBOOK",
+                    "image": "http://placehold.it/200x307",
+                    "url": "http://lonelyplanet.com",
+                    "enabled": true
                 },
                 {
                     "title": "Swizerland",
-                    "type": "GUIDEBOOK",
-                    "image": "http://placehold.it/200x307"
+                    "subtitle": "GUIDEBOOK",
+                    "image": "http://placehold.it/200x307",
+                    "url": "http://lonelyplanet.com",
+                    "enabled": true
                 },
                 {
                     "title": "The best place",
-                    "type": "COFFEE TABLE",
-                    "image": "http://placehold.it/200x307"
+                    "subtitle": "COFFEE TABLE",
+                    "image": "http://placehold.it/210x307",
+                    "url": "http://lonelyplanet.com",
+                    "enabled": true
                 }
             ]
         }, {
