@@ -95,7 +95,16 @@
         }, {
             "type": "promotions",
             "title": "New Promotions",
-            "ads": ["http://placehold.it/600x360", "http://placehold.it/300x250"]
+            "items": [
+                {
+                    "url": "http://lonelyplanet.com",
+                    "image": "http://placehold.it/600x360"
+                }, 
+                {
+                    "url": "http://lonelyplanet.com",
+                    "image": "http://placehold.it/300x250"
+                }
+            ]
         }
     ],
 

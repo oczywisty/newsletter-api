@@ -3,10 +3,11 @@ mixin promotions(content)
     tr
       td
         mixin sectionTitle(content.title)
-    each ad in content.ads
+    each ad in content.items
       tr
         td
           table.full_width(width="600" border="0" cellpadding="0" cellspacing="0" align="center")
             tr
               td.double_padding_bottom(align="center")
-                img.full_width(src="#{ad}")
+                a(href="#{ad.url}")
+                  img.full_width(src="#{ad.image}")

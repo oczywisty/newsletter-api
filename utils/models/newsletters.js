@@ -5,15 +5,20 @@ db.connect();
 
 exports.add = function(name, content, done) {
   id = uuid.v4();
-  content.date = new Date().getTime();
   content.id = id;
   
   db.get().sadd("newsletters", "newsletter:"+id);
-  db.get().hmset("newsletter:"+id, "id", id, "name", name, "content", JSON.stringify(content), done);
+  db.get().hmset("newsletter:"+id, "id", id, "name", name, "image", content.blocks[0].image, "date", new Date().getTime(), "content", JSON.stringify(content), done);
 }
 
 exports.update = function(id, content, done) {
-  db.get().hset("newsletter:"+id, "content", JSON.stringify(content), done);
+  var pipeline = db.get().pipeline();
+  var image = content.blocks[0].image;
+  var content = JSON.stringify(content);
+  pipeline.hset("newsletter:"+id, "content", content);
+  pipeline.hset("newsletter:"+id, "date", new Date().getTime());
+  pipeline.hset("newsletter:"+id, "image", image);
+  pipeline.exec(done);
 }
 
 exports.get = function(id, done) {
@@ -42,7 +47,7 @@ exports.all = function(done) {
 
     pipeline.exec(function(err, result){
         result.forEach(function(key, index){
-          newsletters.push({ name: key[1].name, id: key[1].id });
+          newsletters.push({ name: key[1].name, id: key[1].id,  date: key[1].date,  image: key[1].image });
         });
         done(err, newsletters);
     });
