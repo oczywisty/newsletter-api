@@ -7,7 +7,7 @@ mixin footer
           tr
             td.double_padding_top(align="center")
               each item in footer
-                a.footer-link(href="{item.url}")= item.title
+                a.footer-link(href="#{item.url}")= item.title
           tr
             td.single_padding_top(align="center")
               p.footer-address!= footer_address
