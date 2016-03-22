@@ -5,7 +5,6 @@ var jade = require("jade");
 var router  = express.Router();
 var statsD  = require("../utils/statsd");
 var newsletters = require("../utils/models/newsletters");
-var fs = require("fs");
 
 var EmailBuilder = require('email-builder-core');
 var emailBuilder = new EmailBuilder({ encodeSpecialChars: true , relativePath: 'public'});
@@ -21,9 +20,11 @@ router.get("/", statsD("root"), function(req, res) {
 router.route("/newsletters")
   .post( function(req, res) {
     var name = req.body.name;
+    var content = req.body.content;
+
+    console.log(content);
 
     try {
-      var content = JSON.parse(fs.readFileSync("template/data.json", 'utf8'));
       newsletters.add(name, content, function(){
         res.json({ message: "Newsletter Created" });  
       });
